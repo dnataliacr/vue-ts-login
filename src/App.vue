@@ -1,8 +1,8 @@
 <template>
   <div class="container">
     <form-login v-if="!userStore.getters.isLoggedIn" />
-    <div v-else class="container">
-      <h1>Hi, {{ userStore.state.name }} <span>👋 </span></h1>
+    <div v-else>
+      <h1>Hi, {{ userStore.state.name }} <span>👋</span> </h1>
       <button class="button" @click="userStore.logout">logout</button>
     </div>
   </div>
