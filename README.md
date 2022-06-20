@@ -8,6 +8,7 @@ Basic user sign-in project with TypeScript and Vue 3.
   * username: natalia
   * password: 12345
 
+🔗 To see the project in action, you can try it [here](https://ubiquitous-pudding-b42f88.netlify.app/)
 ***
 ### Screenshot
 ![Screenshot](screenshot.png)
