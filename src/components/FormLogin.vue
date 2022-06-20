@@ -21,10 +21,23 @@
         class="text input-fill"
       />
       </div>
+      <div>{{ userStore.state.error }}</div>
       <button type="submit" class="button">login</button>
     </div>
   </form>
 </template>
 
 <script lang="ts">
+import { defineComponent, reactive } from "vue";
+import userStore from "../store/users";
+
+export default defineComponent({
+  setup() {
+    const form = reactive({
+      username: "",
+      password: "",
+    });
+    return { form };
+  },
+});
 </script>
