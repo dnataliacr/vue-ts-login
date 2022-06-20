@@ -14,7 +14,7 @@ body {
 
 .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     margin-top: 60px;
@@ -28,7 +28,7 @@ h1 {
 }
 .card {
     display: flex;
-    width: min(100%, 25rem);
+    width: min(95%, 25rem);
     height: 35rem;
     background: #f1f7fe;
     flex-direction: column;
