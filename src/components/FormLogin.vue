@@ -1,5 +1,5 @@
 <template>
-  <form class="card">
+  <form @submit.prevent="onSubmit" class="card">
     <div class="top-row bg-top-row">👩‍💻</div>
     <div class="content">
       <div class="field">
@@ -28,7 +28,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from "vue";
+import { defineComponent, reactive, onMounted } from "vue";
 import userStore from "../store/users";
 
 export default defineComponent({
@@ -37,7 +37,13 @@ export default defineComponent({
       username: "",
       password: "",
     });
-    return { form };
+    const onSubmit = () => {
+      userStore.login(form.username, form.password);
+      console.log(form.username, form.password, userStore.getters.isLoggedIn);
+      form.username = "";
+      form.password = "";
+    };
+    return { form, userStore, onSubmit };
   },
 });
 </script>
