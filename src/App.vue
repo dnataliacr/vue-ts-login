@@ -1,21 +1,25 @@
 <template>
-<div class="container"> 
-  <form-login v-if="!userStore.getters.isLoggedIn"/>
+  <div class="container">
+    <form-login v-if="!userStore.getters.isLoggedIn" />
+    <div v-else class="container">
+      <h1>Hi, {{ userStore.state.name }} <span>👋 </span></h1>
+      <button class="button" @click="userStore.logout">logout</button>
+    </div>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-import FormLogin from './components/FormLogin.vue';
-import userStore from './store/users'
+import { defineComponent } from "vue";
+import FormLogin from "./components/FormLogin.vue";
+import userStore from "./store/users";
 
 export default defineComponent({
-  name: 'App',
+  name: "App",
   components: {
-    FormLogin
+    FormLogin,
   },
   setup() {
-    return {userStore}
-  }
+    return { userStore };
+  },
 });
 </script>
