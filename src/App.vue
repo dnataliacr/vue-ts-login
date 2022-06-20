@@ -1,27 +1,21 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+<div class="container"> 
+  <form-login v-if="!userStore.getters.isLoggedIn"/>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import HelloWorld from './components/HelloWorld.vue';
+import FormLogin from './components/FormLogin.vue';
+import userStore from './store/users'
 
 export default defineComponent({
   name: 'App',
   components: {
-    HelloWorld
+    FormLogin
+  },
+  setup() {
+    return {userStore}
   }
 });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
