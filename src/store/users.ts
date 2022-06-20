@@ -7,7 +7,9 @@ const state = reactive({
     error: ''
 })
 
-const getters = reactive({})
+const getters = reactive({
+    isLoggedIn: computed(() => state.username !== '')
+})
 
 const actions = {
     async login(username: string, password: string) {
